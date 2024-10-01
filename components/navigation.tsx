@@ -1,30 +1,16 @@
-import {
-  useDisclosure,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-} from "@chakra-ui/react";
+import { ConnectButton } from "web3uikit";
 
 export default function NavigationBar() {
-  const { isOpen, onToggle } = useDisclosure();
   return (
-    <div>
-      <Tabs variant="soft-rounded" colorScheme="green">
-        <TabList>
-          <Tab>Tab 1</Tab>
-          <Tab>Tab 2</Tab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <p>one!</p>
-          </TabPanel>
-          <TabPanel>
-            <p>two!</p>
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
+    <div className="flex justify-between">
+      <div>
+        <a className="">Swap</a>
+        <a className="">Pool</a>
+        <a className="">Token</a>
+      </div>
+      <div>
+        <ConnectButton moralisAuth={false} />
+      </div>
     </div>
   );
 }

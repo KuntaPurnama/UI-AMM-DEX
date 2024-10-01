@@ -1,11 +1,14 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { ChakraProvider } from "@chakra-ui/react";
+import { MoralisProvider } from "react-moralis";
+import { NotificationProvider } from "web3uikit";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <MoralisProvider initializeOnMount={false}>
+      <NotificationProvider>
+        <Component {...pageProps} />
+      </NotificationProvider>
+    </MoralisProvider>
   );
 }
